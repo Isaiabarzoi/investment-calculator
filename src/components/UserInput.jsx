@@ -1,27 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./UserInput.css";
 
-const UserInput = ({ onSaveInput }) => {
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  });
-
+const UserInput = ({ inputData, onChangeInput }) => {
   const userInputHandler = (e) => {
-    const { name, value } = e.target;
-    setUserInput((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    const inputData = {
-      initialInvestment: +userInput.initialInvestment,
-      annualInvestment: +userInput.annualInvestment,
-      expectedReturn: +userInput.expectedReturn,
-      duration: +userInput.duration,
-    };
-    onSaveInput(inputData);
+    onChangeInput(e);
   };
 
   return (
@@ -32,7 +14,7 @@ const UserInput = ({ onSaveInput }) => {
           <input
             type="number"
             name="initialInvestment"
-            value={userInput.initialInvestment}
+            value={inputData.initialInvestment}
             onChange={userInputHandler}
           />
         </div>
@@ -41,7 +23,7 @@ const UserInput = ({ onSaveInput }) => {
           <input
             type="number"
             name="annualInvestment"
-            value={userInput.annualInvestment}
+            value={inputData.annualInvestment}
             onChange={userInputHandler}
           />
         </div>
@@ -50,7 +32,7 @@ const UserInput = ({ onSaveInput }) => {
           <input
             type="number"
             name="expectedReturn"
-            value={userInput.expectedReturn}
+            value={inputData.expectedReturn}
             onChange={userInputHandler}
           />
         </div>
@@ -59,7 +41,7 @@ const UserInput = ({ onSaveInput }) => {
           <input
             type="number"
             name="duration"
-            value={userInput.duration}
+            value={inputData.duration}
             onChange={userInputHandler}
           />
         </div>

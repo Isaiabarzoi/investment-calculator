@@ -1,8 +1,14 @@
-/* #result {
+#result {
+  margin: auto;
+  max-width: 50rem;
 }
 
 #result thead {
+  font-size: 0.9rem;
+  color: #34ffae;
 }
 
 #result tbody {
-} */
+  font-size: 0.9rem;
+  text-align: right;
+}
