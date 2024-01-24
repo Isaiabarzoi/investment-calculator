@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import "./UserInput.css";
 
 const UserInput = ({ inputData, onChangeInput }) => {
@@ -14,7 +13,7 @@ const UserInput = ({ inputData, onChangeInput }) => {
           <input
             type="number"
             name="initialInvestment"
-            value={inputData.initialInvestment}
+            value={inputData.initialInvestment.toString()}
             onChange={userInputHandler}
           />
         </div>
@@ -23,7 +22,7 @@ const UserInput = ({ inputData, onChangeInput }) => {
           <input
             type="number"
             name="annualInvestment"
-            value={inputData.annualInvestment}
+            value={inputData.annualInvestment.toString()}
             onChange={userInputHandler}
           />
         </div>
@@ -32,7 +31,7 @@ const UserInput = ({ inputData, onChangeInput }) => {
           <input
             type="number"
             name="expectedReturn"
-            value={inputData.expectedReturn}
+            value={inputData.expectedReturn.toString()}
             onChange={userInputHandler}
           />
         </div>
@@ -41,7 +40,7 @@ const UserInput = ({ inputData, onChangeInput }) => {
           <input
             type="number"
             name="duration"
-            value={inputData.duration}
+            value={inputData.duration.toString()}
             onChange={userInputHandler}
           />
         </div>
