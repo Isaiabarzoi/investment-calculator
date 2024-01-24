@@ -17,20 +17,22 @@ function App() {
       ...prev,
       [name]: +value,
     }));
-    // const inputData = {
-    //   initialInvestment: +userInput.initialInvestment,
-    //   annualInvestment: +userInput.annualInvestment,
-    //   expectedReturn: +userInput.expectedReturn,
-    //   duration: +userInput.duration,
-    // };
-    // onSaveInput(inputData);
   };
+
+  let validInput = true;
+  if (userInput.duration < 1) {
+    validInput = false;
+  }
 
   return (
     <>
       <Header />
       <UserInput inputData={userInput} onChangeInput={userInputHandler} />
-      <ResultsTable inputData={userInput} />
+      {validInput ? (
+        <ResultsTable inputData={userInput} />
+      ) : (
+        <p className="center">Please enter a duration greater than zero</p>
+      )}
     </>
   );
 }

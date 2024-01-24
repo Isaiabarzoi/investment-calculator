@@ -9,8 +9,6 @@ const ResultsTable = ({ inputData }) => {
     investmentsData[0].interest -
     investmentsData[0].annualInvestment;
 
-  console.log(initialInvestment);
-
   return (
     <table id="result">
       <thead>
