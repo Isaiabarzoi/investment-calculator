@@ -1,49 +1,38 @@
 import "./UserInput.css";
+import Input from "./Input";
 
 const UserInput = ({ inputData, onChangeInput }) => {
-  const userInputHandler = (e) => {
-    onChangeInput(e);
-  };
-
   return (
     <section id="user-input">
       <div className="input-group">
-        <div>
-          <label>Initial Investment</label>
-          <input
-            type="number"
-            name="initialInvestment"
-            value={inputData.initialInvestment.toString()}
-            onChange={userInputHandler}
-          />
-        </div>
-        <div>
-          <label>Annual Investment</label>
-          <input
-            type="number"
-            name="annualInvestment"
-            value={inputData.annualInvestment.toString()}
-            onChange={userInputHandler}
-          />
-        </div>
-        <div>
-          <label>Expected Return</label>
-          <input
-            type="number"
-            name="expectedReturn"
-            value={inputData.expectedReturn.toString()}
-            onChange={userInputHandler}
-          />
-        </div>
-        <div>
-          <label>Duration</label>
-          <input
-            type="number"
-            name="duration"
-            value={inputData.duration.toString()}
-            onChange={userInputHandler}
-          />
-        </div>
+        <Input
+          label={"Initial Investment"}
+          type={"number"}
+          name={"initialInvestment"}
+          value={inputData.initialInvestment.toString()}
+          onChange={(e) => onChangeInput(e)}
+        />
+        <Input
+          label={"Annual Investment"}
+          type={"number"}
+          name={"annualInvestment"}
+          value={inputData.annualInvestment.toString()}
+          onChange={(e) => onChangeInput(e)}
+        />
+        <Input
+          label={"Expected Return"}
+          type={"number"}
+          name={"expectedReturn"}
+          value={inputData.expectedReturn.toString()}
+          onChange={(e) => onChangeInput(e)}
+        />
+        <Input
+          label={"Duration"}
+          type={"number"}
+          name={"duration"}
+          value={inputData.duration.toString()}
+          onChange={(e) => onChangeInput(e)}
+        />
       </div>
     </section>
   );
