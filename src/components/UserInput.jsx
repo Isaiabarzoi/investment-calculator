@@ -8,6 +8,7 @@ const UserInput = ({ inputData, onChangeInput }) => {
         <Input
           label={"Initial Investment"}
           type={"number"}
+          required
           name={"initialInvestment"}
           value={inputData.initialInvestment.toString()}
           onChange={(e) => onChangeInput(e)}
@@ -15,6 +16,7 @@ const UserInput = ({ inputData, onChangeInput }) => {
         <Input
           label={"Annual Investment"}
           type={"number"}
+          required
           name={"annualInvestment"}
           value={inputData.annualInvestment.toString()}
           onChange={(e) => onChangeInput(e)}
@@ -22,6 +24,7 @@ const UserInput = ({ inputData, onChangeInput }) => {
         <Input
           label={"Expected Return"}
           type={"number"}
+          required
           name={"expectedReturn"}
           value={inputData.expectedReturn.toString()}
           onChange={(e) => onChangeInput(e)}
@@ -29,6 +32,7 @@ const UserInput = ({ inputData, onChangeInput }) => {
         <Input
           label={"Duration"}
           type={"number"}
+          required
           name={"duration"}
           value={inputData.duration.toString()}
           onChange={(e) => onChangeInput(e)}
